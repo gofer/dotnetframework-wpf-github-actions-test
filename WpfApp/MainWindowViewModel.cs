@@ -101,6 +101,13 @@ namespace WpfApp
 
         #endregion
 
+        /// <summary>
+        /// 選択された言語が変更された際のイベントハンドラ
+        /// 
+        /// <see cref="CultureInfo.CurrentUICulture"/>を変化させ，
+        /// <see cref="Message"/>を<see cref="Resources.InitialMessage"/>で初期化する
+        /// </summary>
+        /// <param name="languageKey"><see cref="languages"/>のキーとなる文字列</param>
         private void OnSeletedLanguageChanged(string languageKey)
         {
             CultureInfo.CurrentUICulture = CultureInfo.GetCultureInfo(languageKey);
@@ -108,12 +115,18 @@ namespace WpfApp
             Message = Resources.InitialMessage;
         }
 
+        /// <summary>
+        /// <see cref="MainWindowViewModel"/>の静的コンストラクタ
+        /// </summary>
         static MainWindowViewModel()
         {
             languages.Add(@"ja-JP", @"日本語");
             languages.Add(@"en-US", @"English");
         }
 
+        /// <summary>
+        /// <see cref="MainWindowViewModel"/>のコンストラクタ
+        /// </summary>
         public MainWindowViewModel()
         {
             languageCollection = new ObservableCollection<KeyValuePair<string, string>>(languages.ToList());
