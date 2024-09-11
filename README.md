@@ -1,5 +1,6 @@
-# .NET Framework + WPF‚ÌƒAƒvƒŠ‚ğGithub Actions‚ÅCI/CD‚·‚é
+# .NET Framework + WPFã®ã‚¢ãƒ—ãƒªã‚’Github Actionsã§CI/CDã™ã‚‹
 
-## Ql‚É‚³‚¹‚Ä‚¢‚½‚¾‚¢‚½ƒTƒCƒg
-- [[Github Actions] c#(.NET Framework) ‚ğ ƒrƒ‹ƒh‚·‚é | Programming Items](https://kinoshita-hidetoshi.github.io/Programing-Items/Etc/Github/Actions_cs_netframework.html)
-- [GitHub Actions‚ÅWPFƒAƒvƒŠ‚ğƒrƒ‹ƒh‚µ‚Ä‚İ‚éi‘O•Òj | MESCIUS.devlog - ƒƒVƒEƒXŠ”®‰ïĞ](https://devlog.mescius.jp/github-actions-wpf-netcore/)
+## å‚è€ƒã«ã•ã›ã¦ã„ãŸã ã„ãŸã‚µã‚¤ãƒˆ
+- [[Github Actions] c#(.NET Framework) ã‚’ ãƒ“ãƒ«ãƒ‰ã™ã‚‹ | Programming Items](https://kinoshita-hidetoshi.github.io/Programing-Items/Etc/Github/Actions_cs_netframework.html)
+- [GitHub Actionsã§WPFã‚¢ãƒ—ãƒªã‚’ãƒ“ãƒ«ãƒ‰ã—ã¦ã¿ã‚‹ï¼ˆå‰ç·¨ï¼‰ | MESCIUS.devlog - ãƒ¡ã‚·ã‚¦ã‚¹æ ªå¼ä¼šç¤¾](https://devlog.mescius.jp/github-actions-wpf-netcore/)
+- [.NET Frameworkã®WPFã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã‚’Github Actionsã§ãƒ“ãƒ«ãƒ‰ã™ã‚‹](https://zenn.dev/nuits_jp/articles/2022-07-04-net-framework-wpf-build-with-actions)
