@@ -30,7 +30,6 @@ jobs:
                 }
                 exit 1
 
-
             - name: setup msbuild
               uses: microsoft/setup-msbuild@v2
 
@@ -50,19 +49,11 @@ jobs:
               uses: thedoctor0/zip-release@main
               with:
                 type: 'zip'
-                path: WpfApp\bin\Release
+                directory: WpfApp\bin\Release
                 filename: ${{ github.ref_name }}.zip
-                recursive_exclusions: '*.pdb'
-
-            - name: check file
-              shell: pwsh
-              run: |
-                  pwd
-                  ls
-                  ls ${{ github.ref_name }}.zip
-                  ls D:\
+                exclusions: '**\*.pdb'
 
             - name: create release
               uses: softprops/action-gh-release@v2
               with:
-                files: ${{ github.ref_name }}.zip
+                files: WpfApp\bin\Release\${{ github.ref_name }}.zip
