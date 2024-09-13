@@ -16,7 +16,7 @@ jobs:
             - name: checkout
               uses: actions/checkout@v4
               with:
-                ref: feature-add-github-actions
+                ref: main
                 fetch-depth: 0
 
             - name: is on main branch
@@ -24,7 +24,7 @@ jobs:
               run: |
                 $branches = git branch --contains '${{ github.ref_name }}' | foreach { $_.Trim(' *') }
                 foreach ($branch in $branches) {
-                    if ($branch -eq 'feature-add-github-actions') {
+                    if ($branch -eq 'main') {
                         exit 0
                     }
                 }
