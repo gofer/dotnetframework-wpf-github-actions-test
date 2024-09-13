@@ -51,5 +51,14 @@ namespace UnitTest
             Assert.ThatAsync(async () => await Task.Run(() => SpinWait.SpinUntil(() => called, 3000)), Is.EqualTo(true));
             Assert.That(vm.Message, Is.EqualTo(@"This is a new value"));
         }
+
+        /// <summary>
+        /// 実験用の失敗するテストケース
+        /// </summary>
+        [TestCase()]
+        public void FailTestCase()
+        {
+            Assert.Fail();
+        }
     }
 }
