@@ -18,7 +18,7 @@ jobs:
             - name: is on main branch
               run: |
                 for branch in $(git branch --contains ${{ github.ref_name }}); do
-                    if [[ "${branch}" == 'main' ]]; then
+                    if [[ "${branch}" == 'feature-add-github-actions' ]]; then
                         exit 0
                     fi
                 done
