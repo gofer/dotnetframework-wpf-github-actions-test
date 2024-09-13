@@ -19,6 +19,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{5BA6
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{75E52E5F-339D-4C43-8A29-44CADA7335AB}"
 	ProjectSection(SolutionItems) = preProject
+		.github\workflows\check-branch.ps1 = .github\workflows\check-branch.ps1
 		.github\workflows\dev-unit-test.yml = .github\workflows\dev-unit-test.yml
 		.github\workflows\main-packaging.yml = .github\workflows\main-packaging.yml
 	EndProjectSection
