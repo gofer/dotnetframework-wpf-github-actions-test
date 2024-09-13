@@ -52,7 +52,7 @@ jobs:
                 type: 'zip'
                 path: WpfApp\bin\Release
                 filename: ${{ github.ref_name }}.zip
-                recursive_exclusions: *.pdb
+                recursive_exclusions: '*.pdb'
 
             - name: check file
               shell: pwsh
