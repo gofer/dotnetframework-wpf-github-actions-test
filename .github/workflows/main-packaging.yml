@@ -49,9 +49,9 @@ jobs:
               uses: thedoctor0/zip-release@main
               with:
                 type: 'zip'
-                directory: WpfApp\bin\Release
+                path: WpfApp\bin\Release\**
                 filename: ${{ github.ref_name }}.zip
-                exclusions: '**\*.pdb'
+                exclusions: '*.pdb'
 
             - name: debug
               shell: pwsh
