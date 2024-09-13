@@ -3,7 +3,10 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using WpfApp.Properties;
+
+[assembly: InternalsVisibleTo(@"UnitTest")]
 
 namespace WpfApp
 {
