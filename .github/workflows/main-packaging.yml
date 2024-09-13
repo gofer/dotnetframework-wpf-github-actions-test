@@ -13,7 +13,8 @@ jobs:
             - name: checkout
               uses: actions/checkout@v4
               with:
-                ref: ${{ github.ref_name }}
+                ref: feature-add-github-actions
+                fetch-depth: 0
 
             - name: is on main branch
               shell: pwsh
