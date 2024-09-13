@@ -17,7 +17,7 @@ jobs:
 
             - name: is on main branch
               shell: pwsh
-              run: powershell -NoProfile -ExecutionPolicy Unrestricted ./.github/workflows/check-branch.ps1
+              run: powershell -NoProfile -ExecutionPolicy Unrestricted ./.github/workflows/check-branch.ps1 '${{ github.ref_name }}' 'feature-add-github-actions'
 
             - name: setup msbuild
               uses: microsoft/setup-msbuild@v2

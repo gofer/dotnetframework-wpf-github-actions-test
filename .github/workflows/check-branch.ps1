@@ -1,6 +1,6 @@
-$branches = git branch --contains '${{ github.ref_name }}' | foreach { $_.Trim(' *') }
+$branches = git branch --contains $Args[0] | foreach { $_.Trim(' *') }
 foreach ($branch in $branches) {
-    if ($branch -eq 'feature-add-github-actions') {
+    if ($branch -eq $Args[1]) {
         exit 0
     }
 }
