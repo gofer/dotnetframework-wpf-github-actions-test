@@ -49,7 +49,7 @@ jobs:
               uses: thedoctor0/zip-release@main
               with:
                 type: 'zip'
-                path: WpfApp\bin\Release\**
+                path: .\WpfApp\bin\Release\**
                 filename: ${{ github.ref_name }}.zip
                 recursive_exclusions: '''*.pdb'''
 
