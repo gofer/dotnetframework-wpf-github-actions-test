@@ -1,0 +1,33 @@
+name: UnitTest
+
+on:
+    push:
+        branches: [ "dev" ]
+
+    pull_request:
+        branches: [ "dev" ]
+
+    workflow_dispatch:
+
+jobs:
+    build:
+        runs-on: windows-latest
+
+        steps:
+            - name: checkout
+              uses: actions/checkout@v4
+
+            - name: setup msbuild
+              uses: microsoft/setup-msbuild@v2
+
+            - name: setup nuget
+              uses: NuGet/setup-nuget@v2.0.0
+
+            - name: restore nuget packages
+              run: nuget restore dotnetframework-wpf-github-actions-test.sln
+
+            - name: build solution
+              run: msbuild dotnetframework-wpf-github-actions-test.sln /p:Configuration=Release
+
+            - name: run unit test
+              run: dotnet test **\bin\Release\UnitTest.dll
