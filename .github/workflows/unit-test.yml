@@ -30,8 +30,4 @@ jobs:
               run: msbuild dotnetframework-wpf-github-actions-test.sln
 
             - name: run unit test
-              uses: microsoft/vstest-action@v1.0.0
-              with:
-                testAssembly: |
-                    **\Debug\UnitTest.dll
-                    !**\obj\**
+              run: dotnet test **\bin\Debug\UnitTest.dll
