@@ -50,7 +50,7 @@ jobs:
               uses: thedoctor0/zip-release@main
               with:
                 type: 'zip'
-                filename: .\${{ github.ref_name }}.zip
+                filename: ${{ github.ref_name }}.zip
                 recursive_exclusions: '*.pdb'
                 directory: WpfApp\bin\Release
             
@@ -59,8 +59,10 @@ jobs:
               run: |
                   pwd
                   ls
+                  ls ${{ github.ref_name }}.zip
+                  ls D:\
 
             - name: create release
               uses: softprops/action-gh-release@v2
               with:
-                files: .\${{ github.ref_name }}.zip
+                files: ${{ github.ref_name }}.zip
