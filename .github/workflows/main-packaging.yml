@@ -52,7 +52,7 @@ jobs:
                 type: 'zip'
                 filename: ${{ github.ref_name }}.zip
                 exclusions: '*.pdb'
-                directory: bin\Release
+                directory: WpfApp\bin\Release
 
             - name: create release
               uses: softprops/action-gh-release@v2
