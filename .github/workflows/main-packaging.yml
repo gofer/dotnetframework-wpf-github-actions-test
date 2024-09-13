@@ -1,0 +1,52 @@
+name: Packaging
+
+on:
+    push:
+        tags:
+            - "v*"
+
+jobs:
+    build:
+        runs-on: windows-latest
+
+        steps:
+            - name: checkout
+              uses: actions/checkout@v4
+              with:
+                ref: main
+
+            - name: is on main branch
+              run: |
+                for branch in $(git branch --contains ${{ github.ref_name }}); do
+                    if [[ "${branch}" == 'main' ]]; then
+                        exit 0
+                    fi
+                done
+                exit 1
+
+            - name: setup msbuild
+              uses: microsoft/setup-msbuild@v2
+
+            - name: setup nuget
+              uses: NuGet/setup-nuget@v2.0.0
+
+            - name: restore nuget packages
+              run: nuget restore dotnetframework-wpf-github-actions-test.sln
+
+            - name: build solution
+              run: msbuild dotnetframework-wpf-github-actions-test.sln /p:Configuration=Release
+
+            - name: run unit test
+              run: dotnet test **\bin\Release\UnitTest.dll
+
+            - name: archive artifacts
+              uses: thedoctor0/zip-release@main
+              with:
+                type: 'zip'
+                filename: ${{ github.ref_name }}.zip
+                exclusions: '*.pdb'
+
+            - name: create release
+              uses: softprops/action-gh-release@v2
+              with:
+                files: ${{ github.ref_name }}.zip
