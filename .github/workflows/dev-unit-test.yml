@@ -2,10 +2,10 @@ name: UnitTest
 
 on:
     push:
-        branches: [ "feature-add-github-actions" ]
+        branches: [ "dev" ]
 
     pull_request:
-        branches: [ "feature-add-github-actions" ]
+        branches: [ "dev" ]
 
     workflow_dispatch:
 
@@ -27,7 +27,7 @@ jobs:
               run: nuget restore dotnetframework-wpf-github-actions-test.sln
 
             - name: build solution
-              run: msbuild dotnetframework-wpf-github-actions-test.sln
+              run: msbuild dotnetframework-wpf-github-actions-test.sln /p:Configuration=Release
 
             - name: run unit test
-              run: dotnet test **\bin\Debug\UnitTest.dll
+              run: dotnet test **\bin\Release\UnitTest.dll
