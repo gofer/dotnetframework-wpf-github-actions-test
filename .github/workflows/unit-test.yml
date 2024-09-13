@@ -24,10 +24,10 @@ jobs:
               uses: NuGet/setup-nuget@v2.0.0
 
             - name: restore nuget packages
-              uses: nuget restore dotnetframework-wpf-github-actions-test.sln
+              run: nuget restore dotnetframework-wpf-github-actions-test.sln
 
             - name: build solution
-              uses: msbuild dotnetframework-wpf-github-actions-test.sln
+              run: msbuild dotnetframework-wpf-github-actions-test.sln
 
             - name: run unit test
               uses: microsoft/vstest-action@v1.0.0
