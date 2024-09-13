@@ -13,7 +13,7 @@ jobs:
             - name: checkout
               uses: actions/checkout@v4
               with:
-                ref: main
+                ref: feature-add-github-actions
 
             - name: is on main branch
               run: |
