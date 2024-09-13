@@ -50,8 +50,8 @@ jobs:
               uses: thedoctor0/zip-release@main
               with:
                 type: 'zip'
-                filename: ${{ github.ref_name }}.zip
-                exclusions: '*.pdb'
+                filename: .\${{ github.ref_name }}.zip
+                exclusions: '**\*.pdb'
                 directory: WpfApp\bin\Release
 
             - name: create release
