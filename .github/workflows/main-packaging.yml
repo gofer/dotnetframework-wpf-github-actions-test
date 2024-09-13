@@ -9,6 +9,9 @@ jobs:
     build:
         runs-on: windows-latest
 
+        permissions:
+            contents: write
+
         steps:
             - name: checkout
               uses: actions/checkout@v4
@@ -18,7 +21,15 @@ jobs:
 
             - name: is on main branch
               shell: pwsh
-              run: powershell -NoProfile -ExecutionPolicy Unrestricted ./.github/workflows/check-branch.ps1 '${{ github.ref_name }}' 'feature-add-github-actions'
+              run: |
+                $branches = git branch --contains '${{ github.ref_name }}' | foreach { $_.Trim(' *') }
+                foreach ($branch in $branches) {
+                    if ($branch -eq 'feature-add-github-actions') {
+                        exit 0
+                    }
+                }
+                exit 1
+
 
             - name: setup msbuild
               uses: microsoft/setup-msbuild@v2
@@ -41,6 +52,7 @@ jobs:
                 type: 'zip'
                 filename: ${{ github.ref_name }}.zip
                 exclusions: '*.pdb'
+                directory: bin\Release
 
             - name: create release
               uses: softprops/action-gh-release@v2
