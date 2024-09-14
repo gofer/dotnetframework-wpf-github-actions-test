@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:props="clr-namespace:WpfApp.Properties"
         xmlns:local="clr-namespace:WpfApp"
         mc:Ignorable="d"
         Title="{Binding Title}"
@@ -32,9 +33,16 @@
             <RowDefinition Height="8" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <ComboBox Grid.Row="0" FontSize="16"
-                  ItemsSource="{Binding LanguageCollection}" DisplayMemberPath="Value"
-                  SelectedItem="{Binding SelectedLanguage, UpdateSourceTrigger=PropertyChanged}"/>
+        <DockPanel Grid.Row="0">
+            <TextBlock FontSize="16"
+                       Text="{Binding Path=Resources.LanguageSelectLabelText, Mode=OneWay,
+                                      Source={x:Static props:InternationalizationService.Current}}" />
+            <ComboBox FontSize="16"
+                      HorizontalAlignment="Stretch"
+                      VerticalContentAlignment="Center"
+                      ItemsSource="{Binding LanguageCollection}" DisplayMemberPath="Value"
+                      SelectedItem="{Binding SelectedLanguage, UpdateSourceTrigger=PropertyChanged}"/>
+        </DockPanel>
         <TextBlock Grid.Row="2" FontSize="16"
                    Text="{Binding Message, UpdateSourceTrigger=PropertyChanged}" />
         <TextBox Grid.Row="4" FontSize="16"

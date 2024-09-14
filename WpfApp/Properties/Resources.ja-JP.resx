@@ -120,4 +120,7 @@
   <data name="InitialMessage" xml:space="preserve">
     <value>こんにちは、世界。</value>
   </data>
+  <data name="LanguageSelectLabelText" xml:space="preserve">
+    <value>言語</value>
+  </data>
 </root>

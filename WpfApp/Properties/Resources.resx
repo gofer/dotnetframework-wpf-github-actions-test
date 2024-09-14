@@ -121,4 +121,8 @@
     <value>Hello, world.</value>
     <comment>Messageの初期値</comment>
   </data>
+  <data name="LanguageSelectLabelText" xml:space="preserve">
+    <value>Language</value>
+    <comment>言語設定選択ラベルテキスト</comment>
+  </data>
 </root>

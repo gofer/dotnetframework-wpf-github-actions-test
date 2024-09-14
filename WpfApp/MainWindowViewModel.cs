@@ -113,7 +113,7 @@ namespace WpfApp
         /// <param name="languageKey"><see cref="languages"/>のキーとなる文字列</param>
         private void OnSeletedLanguageChanged(string languageKey)
         {
-            CultureInfo.CurrentUICulture = CultureInfo.GetCultureInfo(languageKey);
+            InternationalizationService.Current.UICultureInfo = CultureInfo.GetCultureInfo(languageKey);
 
             Message = Resources.InitialMessage;
         }
