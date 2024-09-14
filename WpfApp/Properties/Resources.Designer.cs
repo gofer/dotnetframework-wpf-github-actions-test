@@ -8,6 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.Runtime.CompilerServices;
+
+[assembly: InternalsVisibleTo(@"UnitTest")]
+
 namespace WpfApp.Properties {
     using System;
     
@@ -63,9 +67,18 @@ namespace WpfApp.Properties {
         /// <summary>
         ///   Hello, world. に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        internal static string InitialMessage {
+        public static string InitialMessage {
             get {
                 return ResourceManager.GetString("InitialMessage", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Language に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string LanguageSelectLabelText {
+            get {
+                return ResourceManager.GetString("LanguageSelectLabelText", resourceCulture);
             }
         }
     }
