@@ -11,9 +11,39 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "トップ", "トップ", "{
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp", "WpfApp\WpfApp.csproj", "{82E5F199-D73F-4D4D-9672-60C5EB72B867}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "UnitTest\UnitTest.csproj", "{B50E2B8E-60DF-4496-8984-9BB027525C29}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{5BA6E24E-AD04-4AD1-AD07-A4FAB06B02EB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{75E52E5F-339D-4C43-8A29-44CADA7335AB}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\dev-unit-test.yml = .github\workflows\dev-unit-test.yml
+		.github\workflows\main-packaging.yml = .github\workflows\main-packaging.yml
+	EndProjectSection
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{82E5F199-D73F-4D4D-9672-60C5EB72B867}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82E5F199-D73F-4D4D-9672-60C5EB72B867}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82E5F199-D73F-4D4D-9672-60C5EB72B867}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82E5F199-D73F-4D4D-9672-60C5EB72B867}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B50E2B8E-60DF-4496-8984-9BB027525C29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B50E2B8E-60DF-4496-8984-9BB027525C29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B50E2B8E-60DF-4496-8984-9BB027525C29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B50E2B8E-60DF-4496-8984-9BB027525C29}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5BA6E24E-AD04-4AD1-AD07-A4FAB06B02EB} = {14B39E69-B931-41F9-8093-8381D94EEDB1}
+		{75E52E5F-339D-4C43-8A29-44CADA7335AB} = {5BA6E24E-AD04-4AD1-AD07-A4FAB06B02EB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {400BD418-D769-4738-9CE6-A8688656981D}
